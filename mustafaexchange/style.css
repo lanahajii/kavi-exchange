@@ -1,0 +1,118 @@
+body {
+    background-color: #2b004c; /* ڕەنگی مۆری تۆخ بۆ پاشبنەما */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo { width: 100px; }
+
+.date-time { text-align: right; font-size: 14px; }
+
+.table-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header-item {
+    flex: 1;
+    background: white;
+    color: #4b0082;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.exchange-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.cell {
+    flex: 1;
+    background-color: #4b0082; /* ڕەنگی مۆری خانەکان */
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #5a00a3;
+}
+
+.cell img {
+    width: 25px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.currency {
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.buy, .sale {
+    color: #ffffff;
+}
+/* ستایلی گشتی بۆ باکگراوندی نووسینەکە */
+.footer-scroller {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4b0082; /* هەمان مۆری ناو وێنەکە */
+    color: white;
+    padding: 10px 0;
+    overflow: hidden; /* بۆ ئەوەی ئەو بەشەی دەچێتە دەرەوەی شاشە ون بێت */
+    border-top: 1px solid #5a00a3;
+    z-index: 1000;
+}
+
+/* دروستکردنی جوڵەکە (Animation) */
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    animation: scroll-left 15s linear infinite; /* لێرە خێراییەکەی دیاری دەکرێت */
+}
+
+.phone {
+    color: #ffcc00; /* ڕەنگی زەرد بۆ ژمارەکان وەک وێنەکە */
+    margin-left: 10px;
+}
+
+/* پێناسەکردنی جوڵەی نووسینەکە لە ڕاستەوە بۆ چەپ */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
