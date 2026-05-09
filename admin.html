@@ -47,6 +47,36 @@
         </tbody>
     </table>
 </div>
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "kavi-exchange.firebaseapp.com",
+  projectId: "kavi-exchange",
+  storageBucket: "kavi-exchange.firebasestorage.app",
+  messagingSenderId: "48958701096",
+  appId: "1:48958701096:web:312bd94a3809dab0cabf1d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadPrices() {
+
+  const usdDoc = await getDoc(doc(db, "prices", "USD"));
+
+  if (usdDoc.exists()) {
+    const data = usdDoc.data();
+
+    document.querySelector(".usd-buy").innerText = data.buy;
+    document.querySelector(".usd-sale").innerText = data.sale;
+  }
+}
+
+loadPrices();
+</script>
 
 </body>
 </html>
